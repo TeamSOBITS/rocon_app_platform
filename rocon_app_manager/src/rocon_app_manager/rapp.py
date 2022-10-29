@@ -190,7 +190,7 @@ class Rapp(object):
                     data['published_interfaces'] = []
                 rospy.loginfo("Rapp Manager : stopped rapp [%s]" % data['name'] + "'.")
         except Exception as e:
-            print str(e)
+            print (str(e))
             error_msg = "Error while stopping rapp '" + data['name'] + "'."
             rospy.loginfo(error_msg)
             data['status'] = 'Error'

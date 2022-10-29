@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #
 # License: BSD
 #   https://raw.github.com/robotics-in-concert/rocon_app_platform/license/LICENSE

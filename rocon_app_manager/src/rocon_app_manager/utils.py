@@ -73,7 +73,7 @@ def _prepare_launch_text(launch_file, rapp_launch_args, public_parameters, launc
     for arg in rapp_launch_args:
         try:
             launch_text += '\n    <arg name="%s" value="%s"/>' % (arg, launch_arg_mappings.__dict__[arg])
-        except KeyError, e:
+        except KeyError as e:
             rospy.logwarn("Expected argument {arg} not found in launcher arg_mapping list. using empty string instead.".format(arg=arg))
             launch_text += '\n    <arg name="%s" value="%s"/>' % (arg, "")
     for name, value in public_parameters.items():

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #
 # License: BSD
 #   https://raw.github.com/robotics-in-py/rocon_app_platform/license/LICENSE
@@ -31,7 +31,7 @@ def load_rapp_yaml_from_file(filename):
     base_path = os.path.dirname(filename)
 
     with open(filename, 'r') as f:
-        yaml_data = yaml.load(f.read())
+        yaml_data = yaml.load(f.read(), Loader=yaml.SafeLoader)
         app_data = copy.deepcopy(yaml_data)
 
         for d in app_data:
@@ -146,7 +146,7 @@ def _load_public_interface(base_path, public_interface_resource):
 
     public_interface_file_path = _find_resource(base_path, public_interface_resource)
     with open(public_interface_file_path, 'r') as f:
-        y = yaml.load(f.read())
+        y = yaml.load(f.read(), Loader=yaml.SafeLoader)
         y = y or {}
         try:
             for k in keys:
@@ -181,7 +181,7 @@ def _load_public_parameters(base_path, public_parameters_resource):
 
     public_parameters_file_path = _find_resource(base_path, public_parameters_resource)
     with open(public_parameters_file_path, 'r') as f:
-        y = yaml.load(f.read())
+        y = yaml.load(f.read(), Loader=yaml.SafeLoader)
         y = y or {}
 
     return public_parameters_file_path, y

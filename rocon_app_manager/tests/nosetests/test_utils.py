@@ -35,7 +35,7 @@ def test_prepare_launch_text_launchfile():
     print(console.bold + "****************************************************************************************" + console.reset)
     print("")
     launchtext = utils._prepare_launch_text("path_to_launcher", [], {}, default_launch_arg_mappings())
-    print launchtext
+    print (launchtext)
     assert launchtext.strip() == """
 <launch>
   <include file="path_to_launcher" ns="/">
@@ -50,7 +50,7 @@ def test_prepare_launch_text_launchfile_appnamespace():
     print(console.bold + "****************************************************************************************" + console.reset)
     print("")
     launchtext = utils._prepare_launch_text("path_to_launcher", ['application_namespace'], {}, default_launch_arg_mappings())
-    print "'" + launchtext + "'"
+    print ("'" + launchtext + "'")
     assert launchtext.strip() == """
 <launch>
   <include file="path_to_launcher" ns="/">
@@ -66,7 +66,7 @@ def test_prepare_launch_text_launchfile_public_parameters():
     print(console.bold + "****************************************************************************************" + console.reset)
     print("")
     launchtext = utils._prepare_launch_text("path_to_launcher", [], {"public_param": "pubparam_value"}, default_launch_arg_mappings())
-    print "'" + launchtext + "'"
+    print ("'" + launchtext + "'")
     assert launchtext.strip() == """
 <launch>
   <include file="path_to_launcher" ns="/">
@@ -82,7 +82,7 @@ def test_prepare_launch_text_launchfile_rocon_uri():
     print(console.bold + "****************************************************************************************" + console.reset)
     print("")
     launchtext = utils._prepare_launch_text("path_to_launcher", ['rocon_uri'], {}, default_launch_arg_mappings())
-    print "'" + launchtext + "'"
+    print ("'" + launchtext + "'")
     assert launchtext.strip() == """
 <launch>
   <include file="path_to_launcher" ns="/">

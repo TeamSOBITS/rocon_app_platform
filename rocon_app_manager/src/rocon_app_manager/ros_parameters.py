@@ -9,6 +9,7 @@
 import rosgraph
 import rospy
 import rocon_console.console as console
+from ansible.module_utils.six import iteritems
 
 ###############################################################################
 # Functions
@@ -73,8 +74,8 @@ class StandaloneParameters:
         # the resource name for the key, e.g. 'preferred/rocon_apps/chirp'. As a result, preferred looks like:
         # {'rocon_apps': {'chirp': 'rocon_apps/moo_chirp', 'talker': 'rocon_apps/talker'}}
         self.preferred = {}
-        for pkg, preferred_rapps_dict in preferred.iteritems():
-            for parent_rapp_basename, preferred_rapp_resource_name in preferred_rapps_dict.iteritems():
+        for pkg, preferred_rapps_dict in iteritems(preferred):
+            for parent_rapp_basename, preferred_rapp_resource_name in iteritems(preferred_rapps_dict):
                 self.preferred[pkg + "/" + parent_rapp_basename] = preferred_rapp_resource_name
 
     def __str__(self):

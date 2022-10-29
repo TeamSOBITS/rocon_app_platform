@@ -25,7 +25,7 @@ not multi-robot.
 
 import rospy
 import time
-import thread
+import _thread
 import roslaunch.pmon
 from .caps_list import CapsList, start_capabilities_from_caps_list, stop_capabilities_from_caps_list
 import rocon_python_comms
@@ -39,7 +39,7 @@ import std_msgs.msg as std_msgs
 # local imports
 from . import exceptions
 from . import utils
-from ros_parameters import StandaloneParameters
+from .ros_parameters import StandaloneParameters
 from .rapp import convert_rapps_from_rapp_specs
 
 ##############################################################################

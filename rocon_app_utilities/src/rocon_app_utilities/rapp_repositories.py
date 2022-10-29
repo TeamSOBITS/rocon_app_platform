@@ -266,7 +266,7 @@ def _get_rapps_index_filename_prefix(source):
       :returns: the path
       :rtype: str
     '''
-    digest = hashlib.md5(':'.join(source)).hexdigest()
+    digest = hashlib.md5(':'.join(source).encode('utf-8')).hexdigest()
     logger.debug("_get_rapps_index_filename_prefix(%s) hash '%s'" % (source, digest))
     return digest
 
